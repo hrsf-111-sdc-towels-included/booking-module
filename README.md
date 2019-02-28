@@ -28,20 +28,31 @@
 - Parameters : none
 - Response : status 200 (OK)
 - Response Data : 
-```json
+```javascript
 [
   {
-    booking_id: integer,
-    home_id: integer,
-    user_id: integer,
-    created_at: timestamp,
-    check_in: date,
-    check_out: date,
-    price_per_night: integer,
-    no_guests: integer
+    "booking_id": integer,
+    "home_id": integer,
+    "user_id": integer,
+    "created_at": timestamp,
+    "check_in": date,
+    "check_out": date,
+    "price_per_night": integer,
+    "no_guests": integer
   }, ...
 ]
 ```
+
+| <td colspan=2>Properties |
+| --- |
+| booking_id | integer<br>The ID that the booking module uses to uniquely identify a booking |
+| home_id | integer<br>The ID that the app uses to uniquely identify a home |
+| user_id | integer<br>The ID that the app uses to uniquely identify a user |
+| created_at | timestamp<br>The exact time that this booking was made |
+| check_in | date<br>The date this booking resevation starts |
+| check_out | date<br>The date this booking reservation ends |
+| price_per_night | integer<br>A price for the home per night |
+| no_guests | integer<br>A number that represents how many guests are visiting |
 
 > Update
 - (/api/booking/:booking_id) - updates a reservation
