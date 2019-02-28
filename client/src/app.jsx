@@ -19,7 +19,7 @@ export default class App extends React.Component {
         window.location = window.location.href + "?100";
        }
 
-    fetch('http://ec2-18-191-62-37.us-east-2.compute.amazonaws.com/api/bookings/' + homeId, {
+    fetch('/api/bookings/' + homeId, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export default class App extends React.Component {
 
   postBooking(booking) {
     console.log(`${booking} was sent`);
-    fetch('http://ec2-18-191-62-37.us-east-2.compute.amazonaws.com/api/bookings/', {
+    fetch('/bookings/', {
       method: 'POST',
       mode: 'no-cors',
       body: JSON.stringify({booking: booking}),
