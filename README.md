@@ -30,7 +30,14 @@
 - Response Data : 
 ```json
 {
-  booking_id: integer, home_id: integer, user_id: integer, created_at: timestamp, check_in: date, check_out: date, price_per_night: integer, no_guests: integer
+  booking_id: integer,
+  home_id: integer,
+  user_id: integer,
+  created_at: timestamp,
+  check_in: date,
+  check_out: date,
+  price_per_night: integer,
+  no_guests: integer
 }
 ```
 
