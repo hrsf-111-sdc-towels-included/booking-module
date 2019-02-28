@@ -43,8 +43,8 @@
 ]
 ```
 
-| <td colspan=2>Properties</td> |
-| --- |
+| Properties | |
+| --- | --- |
 | booking_id | integer<br>The ID that the booking module uses to uniquely identify a booking |
 | home_id | integer<br>The ID that the app uses to uniquely identify a home |
 | user_id | integer<br>The ID that the app uses to uniquely identify a user |
