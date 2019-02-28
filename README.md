@@ -19,7 +19,24 @@
 
 > Create
 - (/api/booking/:home_id) - reserves a home
-- Parameters : user_id (integer), check_in (date), check_out (date), price_per_night (integer), no_guests (integer)
+- Parameters : 
+```javascript
+{
+  "user_id": integer,
+  "check_in": date,
+  "check_out": date,
+  "price_per_night": integer,
+  "no_guests": integer
+}
+```
+| Properties | Definition |
+| --- | --- |
+| user_id | **integer**<br>The ID that the app uses to uniquely identify a user |
+| check_in | **date**<br>The date this booking resevation starts |
+| check_out | **date**<br>The date this booking reservation ends |
+| price_per_night | **integer**<br>A price for the home per night |
+| no_guests | **integer**<br>A number that represents how many guests are visiting |
+
 - Response : status 201 (Created)
 - Response Data : created home_id (integer)
 
@@ -56,7 +73,24 @@
 
 > Update
 - (/api/booking/:booking_id) - updates a reservation
-- Parameters : user_id (integer), check_in (date), check_out (date), price_per_night (integer), no_guests (integer)
+- Parameters : 
+```javascript
+{
+  user_id: integer,
+  check_int: date,
+  check_out: date,
+  price_per_night: integer,
+  no_guests: integer
+}
+```
+| Properties | Definition |
+| --- | --- |
+| user_id | **integer**<br>The ID that the app uses to uniquely identify a user |
+| check_in | **date**<br>The date this booking resevation starts |
+| check_out | **date**<br>The date this booking reservation ends |
+| price_per_night | **integer**<br>A price for the home per night |
+| no_guests | **integer**<br>A number that represents how many guests are visiting |
+
 - Response : status 200 (OK)
 - Response Data : n/a
 
