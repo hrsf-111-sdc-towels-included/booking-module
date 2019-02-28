@@ -16,9 +16,9 @@ app.use('/', expressStaticGzip(path.join(__dirname, '/../public'), {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -49,7 +49,7 @@ app.get('/api/pricing/:homeId', (req, res) => {
 });
 
 app.post('/api/bookings', (req, res) => {
-  const booking = req.body.booking;
+  const { booking } = req.body;
   console.log(booking);
   db.createBooking(booking, (err) => {
     if (err) {
@@ -59,6 +59,29 @@ app.post('/api/bookings', (req, res) => {
     }
   });
 });
+
+
+app.route('/api/booking/:id')
+  // CREATE
+  .post((req, res) => {
+    res.send('create operation success');
+  })
+
+  // READ
+  .get((req, res) => {
+    res.send('read operation success');
+  })
+
+  // UPDATE
+  .put((req, res) => {
+    res.send('update operation success');
+  })
+
+  // DELETE
+  .delete((req, res) => {
+    res.send('delete operation success');
+  });
+
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
