@@ -40,8 +40,7 @@
 - Response : status 201 (Created)
 - Response Data : created home_id (integer)
 
-> ###Read
->> Read all reservations for a home
+> Read (all reservations for a home)
 - (/api/booking/:home_id) - receives room reservations for a specific home
 - Parameters : none
 - Response : status 200 (OK)
@@ -72,7 +71,7 @@
 | price_per_night | **integer**<br>A price for the home per night |
 | no_guests | **integer**<br>A number that represents how many guests are visiting |
 
->> Read a reservation
+> Read (a reservation)
 - (/api/booking/id/:booking_id) - receives a specific reservation
 - Parameters : none
 - Response: statue 200 (OK)
@@ -101,7 +100,7 @@
 | price_per_night | **integer**<br>A price for the home per night |
 | no_guests | **integer**<br>A number that represents how many guests are visiting |
 
-> ###Update
+> Update
 - (/api/booking/:booking_id) - updates a reservation
 - Parameters : 
 ```javascript
@@ -124,7 +123,7 @@
 - Response : status 200 (OK)
 - Response Data : n/a
 
-> ###Delete
+> Delete
 - (/api/booking/:booking_id) - removes a reservation
 - Parameters : none
 - Response : status 200 (OK)
