@@ -41,6 +41,7 @@
 - Response Data : created home_id (integer)
 
 > Read
+>> Read all reservations for a home
 - (/api/booking/:home_id) - receives room reservations for a specific home
 - Parameters : none
 - Response : status 200 (OK)
@@ -58,6 +59,35 @@
     "no_guests": integer
   }, ...
 ]
+```
+
+| Properties | Definition |
+| --- | --- |
+| booking_id | **integer**<br>The ID that the booking module uses to uniquely identify a booking |
+| home_id | **integer**<br>The ID that the app uses to uniquely identify a home |
+| user_id | **integer**<br>The ID that the app uses to uniquely identify a user |
+| created_at | **timestamp**<br>The exact time that this booking was made |
+| check_in | **date**<br>The date this booking resevation starts |
+| check_out | **date**<br>The date this booking reservation ends |
+| price_per_night | **integer**<br>A price for the home per night |
+| no_guests | **integer**<br>A number that represents how many guests are visiting |
+
+>> Read a reservation
+- (/api/booking/id/:booking_id) - receives a specific reservation
+- Parameters : none
+- Response: statue 200 (OK)
+- Response Data : 
+```javascript
+{
+  "booking_id": integer,
+  "home_id": integer,
+  "user_id": integer,
+  "created_at": timestamp,
+  "check_in": date,
+  "check_out": date,
+  "price_per_night": integer,
+  "no_guests": integer
+}
 ```
 
 | Properties | Definition |
