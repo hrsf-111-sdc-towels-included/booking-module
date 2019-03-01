@@ -42,11 +42,11 @@
 
 > Read
 >> Read all reservations for a home
-- (/api/booking/:home_id) - receives room reservations for a specific home
-- Parameters : none
-- Response : status 200 (OK)
-- Response Data : 
-```javascript
+>>- (/api/booking/:home_id) - receives room reservations for a specific home
+>>- Parameters : none
+>>- Response : status 200 (OK)
+>>- Response Data : 
+>>```javascript
 [
   {
     "booking_id": integer,
@@ -61,7 +61,7 @@
 ]
 ```
 
-| Properties | Definition |
+>>| Properties | Definition |
 | --- | --- |
 | booking_id | **integer**<br>The ID that the booking module uses to uniquely identify a booking |
 | home_id | **integer**<br>The ID that the app uses to uniquely identify a home |
