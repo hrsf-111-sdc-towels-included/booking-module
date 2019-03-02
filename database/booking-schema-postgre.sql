@@ -15,4 +15,10 @@ CREATE TABLE bookings (
   no_guests integer NOT NULL
 );
 
-INSERT INTO bookings (home_id, user_id, check_in, check_out, price_per_night, no_guests) VALUES (1, 1, '2019-03-10 10:30:00', '2019-03-15 09:20:00', 200, 2);
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  login VARCHAR(100) NOT NULL
+);
