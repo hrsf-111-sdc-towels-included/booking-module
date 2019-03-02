@@ -61,7 +61,7 @@ app.post('/api/bookings', (req, res) => {
 });
 
 
-app.route('/api/booking/:id')
+app.route('/api/booking/(:id)?')
   // CREATE
   .post((req, res) => {
     res.send('create operation success');
@@ -81,6 +81,10 @@ app.route('/api/booking/:id')
   .delete((req, res) => {
     res.send('delete operation success');
   });
+
+app.get('/api/booking/id/:booking_id(([\\d])+)', (req, res) => {
+  res.send('get booking_id operation success');
+});
 
 
 app.listen(PORT, () => {
