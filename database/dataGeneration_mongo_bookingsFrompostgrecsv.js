@@ -16,7 +16,7 @@ function pad(num, size) {
     return s;
 }
 
-writable.write("home_id,user_id,check_in,check_out,price_per_night,no_guests,booking_id\n");
+writable.write("home_id.int32(),user_id.int32(),check_in.date_ms(yyyy-MM-dd),check_out.date_ms(yyyy-MM-dd),price_per_night.int32(),no_guests.int32(),booking_id.int32()\n");
 
 const middleman = new stream();
 let cnt = 0;
