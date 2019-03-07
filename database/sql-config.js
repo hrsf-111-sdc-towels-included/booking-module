@@ -1,8 +1,8 @@
 // rename as sql-config.js and modify accordingly
 
 module.exports = {
-  host: '172.17.0.2',
+  host: 'localhost',
   user: 'root',
-  password: 'booking1',
+  password: '',
   database: 'booking_requests',
 };
