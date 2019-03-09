@@ -1,6 +1,6 @@
 require('newrelic');
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const path = require('path');
 const expressStaticGzip = require('express-static-gzip');
 
@@ -14,9 +14,9 @@ app.use('/', expressStaticGzip(path.join(__dirname, '/../public'), {
   enableBrotli: true,
   orderPreference: ['br', 'gz'],
 }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
