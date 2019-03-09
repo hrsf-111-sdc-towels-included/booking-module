@@ -1,8 +1,8 @@
 node_modules/
 .gitignore
-client/dist/bundle.js
 database/sql-config.js
 *.csv
 package-lock.json
 newrelic_agent.log
 public/bundle.js
+public/bundle.js.gz
