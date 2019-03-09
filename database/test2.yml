@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3002"
+  phases:
+    - duration: 120
+      arrivalRate: 350
+scenarios:
+  - flow:
+    - post:
+        url: "/api/booking/{{$randomNumber(1,100000000)}}"
+        json:
+          user_id: "{{$randomNumber(1, 10000)}}"
+          check_in: "2019-01-01"
+          check_out: "2019-01-10"
+          price_per_night: "{{$randomNumber(100, 300)}}"
+          no_guests: "{{$randomNumber(1, 5)}}"
