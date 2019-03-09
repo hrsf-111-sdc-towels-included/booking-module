@@ -5,3 +5,4 @@ database/sql-config.js
 *.csv
 package-lock.json
 newrelic_agent.log
+public/bundle.js
