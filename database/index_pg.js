@@ -5,7 +5,7 @@ const pool = new Pool({
   user: 'postgres',
   password: 'postgres',
   database: 'booking_requests',
-  max: 50,
+  max: 80,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
 });
