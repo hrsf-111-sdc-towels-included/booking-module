@@ -19,7 +19,7 @@ export default class App extends React.Component {
         window.location = window.location.href + "?100";
        }
 
-    fetch('/api/bookings/' + homeId, {
+    fetch('/api/booking/' + homeId, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
