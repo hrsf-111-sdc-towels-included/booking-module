@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import BookingWidget from './BookingWidget.jsx';
+import BookingWidget from './BookingWidget';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,13 +11,8 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-      let homeId;
-      if (window.location.href.split('?')[1]) {
-        homeId = window.location.href.split('?')[1];
-       } else {
-        window.location = window.location.href + "?100";
-       }
-
+    let homeId = new URLSearchParams(window.location.search).get('homeId');
+    if (!homeId || !parseInt(homeId, 10)) homeId = 200;
     fetch('/api/booking/' + homeId, {
       method: 'GET',
       headers: {
@@ -26,7 +20,6 @@ export default class App extends React.Component {
       },
     })
       .then(response => response.json())
-      .then(JSONresp => JSONresp)
       .then((calendar) => {
         this.setState({
           calendar: calendar,
@@ -36,18 +29,15 @@ export default class App extends React.Component {
   }
 
   postBooking(booking) {
-    console.log(`${booking} was sent`);
     fetch('/bookings/', {
       method: 'POST',
       mode: 'no-cors',
-      body: JSON.stringify({booking: booking}),
+      body: JSON.stringify({ booking: booking }),
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => {
-        return response.json();
-      })
+      .then(response => response.json());
   }
 
   render() {

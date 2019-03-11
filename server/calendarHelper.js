@@ -10,7 +10,7 @@ const cal = (bookings, callback) => {
     const numDays = moment().add(i, 'months').startOf('month').daysInMonth();
     const days = [];
     const month = [[], [], [], [], [], []];
-    const bookingsArr = JSON.parse(JSON.stringify(bookings));
+    const bookingsArr = bookings;
 
     for (let j = 0; j < 42; j += 1) {
       const day = {
