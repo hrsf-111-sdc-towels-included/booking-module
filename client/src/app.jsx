@@ -21,16 +21,14 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then((calendar) => {
-        console.log(calendar);
         this.setState({
           calendar: calendar,
-        }, () => console.log(this.state));
+        });
       })
       .catch(error => console.error(error));
   }
 
   postBooking(booking) {
-    console.log(`${booking} was sent`, this.state);
     fetch('/bookings/', {
       method: 'POST',
       mode: 'no-cors',
