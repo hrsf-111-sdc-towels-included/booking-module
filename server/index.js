@@ -83,7 +83,12 @@ app.route('/api/booking/:id')
     (async function getRes() {
       try {
         const result = await db.getAllReservations({ home_id: req.params.id });
-        res.send(result);
+        cal(result, (error, grid) => {
+          if (error) {
+            throw error;
+          }
+          res.send(grid);
+        });
       } catch (err) {
         console.error(err);
         res.status(500).send();
