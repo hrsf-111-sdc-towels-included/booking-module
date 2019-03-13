@@ -1,13 +1,13 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  host: 'localhost',
+  host: '54.153.22.244',
   user: 'postgres',
   password: 'postgres',
   database: 'booking_requests',
-  max: 80,
+  max: 30,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 10000,
 });
 
 pool.on('error', (err) => {
